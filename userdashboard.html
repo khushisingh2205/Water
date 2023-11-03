@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body {
+            background-image: url('droplet.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard {
+            background-color: aquamarine;
+            width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .dashboard h1,h2 {
+            color: blue;
+        }
+
+        .form-label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            background-color: aquamarine;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Society Dashboard</h1>
+        <div class="form-container">
+            <form id="userForm">
+                  <h2>  Name</h2>
+                  <h2> Email id</h2>
+                  <h2> Phone no.</h2>
+                <br>
+                <input type="submit" value="Submit"> 
+
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            // Get form data if needed
+            const formData = new FormData(event.target);
+            // Redirect to the payment page
+            window.location.href = "payment.html";
+        });
+    </script>
+
+</html>
+
+
+
+
+   

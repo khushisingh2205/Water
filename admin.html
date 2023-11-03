@@ -1,0 +1,95 @@
+/<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('waterbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            background-color: aquamarine;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: aquamarine;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: blue;
+        }
+
+        #submitBtn {
+            background-color: aquamarine;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Admin Login</h1>
+        <form id="AdminForm" action="#" method="post">
+            <label for="Admin" class="btn">Admin</label>
+            <input type="text" id="Admin" name="Admin" class="btn" placeholder="Enter Admin" required>
+            <br><br>
+            <label for="password" class="btn">Password</label>
+            <input type="password" id="password" name="password" class="btn" placeholder="Enter Password" required>
+            <br><br>
+            <button type="button" id="submitBtn" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    // Define the correct Admin ID and password
+    const correctAdmin = "admin";
+    const correctPassword = "password1";
+
+    // Get form elements and submit button
+    const adminInput = document.getElementById("Admin");
+    const passwordInput = document.getElementById("password");
+    const submitButton = document.getElementById("submitBtn");
+
+    // Add an event listener to the button for validation and redirection
+    submitButton.addEventListener("click", function () {
+        // Get user input
+        const enteredAdmin = adminInput.value;
+        const enteredPassword = passwordInput.value;
+
+        // Check if the entered credentials match the correct values
+        if (enteredAdmin === correctAdmin && enteredPassword === correctPassword) {
+            // If the credentials match, redirect to the registration page
+            window.location.href = "admindashboard.html";
+        } else {
+            // If the credentials do not match, show an alert
+            alert("Invalid credentials. Please try again.");
+        }
+    });
+</script>
+</html>

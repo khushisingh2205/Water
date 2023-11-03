@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('waterbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            background-color: aquamarine;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: aquamarine;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: blue;
+        }
+
+        #submitBtn {
+            background-color: aquamarine;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Society Login</h1>
+        <form id="SocietyForm" action="#" method="post">
+            <label for="Society" class="btn">Society</label>
+            <select id="Society" name="Society" class="btn">
+                <option value="Society 1">Society 1</option>
+                <option value="Society 2">Society 2</option>
+                <option value="Society 3">Society 3</option>
+                <option value="Society 4">Society 4</option>
+            </select>
+            <label for="password" class="btn">Password</label>
+            <input type="password" id="password" name="password" class="btn" required>
+            <br><br>
+            <button type="button" id="submitBtn" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    // Define the correct Society IDs and passwords
+    const correctCredentials = {
+        "Society 1": "password1",
+        "Society 2": "password2",
+        "Society 3": "password3",
+        "Society 4": "password4",
+        // Add more credentials as needed
+    };
+
+    // Get form elements and submit button
+    const societySelect = document.getElementById("Society");
+    const passwordInput = document.getElementById("password");
+    const submitButton = document.getElementById("submitBtn");
+
+    // Add an event listener to the button for validation and redirection
+    submitButton.addEventListener("click", function () {
+        // Get user input
+        const selectedSociety = societySelect.value;
+        const enteredPassword = passwordInput.value;
+
+        // Check if the entered credentials match the correct values
+        if (correctCredentials.hasOwnProperty(selectedSociety) && correctCredentials[selectedSociety] === enteredPassword) {
+            // If the credentials match, redirect to the registration page
+            window.location.href = "userdashboard.html";
+        } else {
+            // If the credentials do not match, show an alert
+            alert("Invalid credentials. Please try again.");
+        }
+    });
+</script>
+</html>
